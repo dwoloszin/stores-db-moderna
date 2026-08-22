@@ -958,6 +958,26 @@ class ModernaDB(StoreDB):
     DB_ENV_KEY = "DATABASE_URL_MODERNA"
 
 
+class SantaLuciaDB(StoreDB):
+    STORE_ID   = "santalucia"
+    DB_ENV_KEY = "DATABASE_URL_SANTALUCIA"
+
+
+class AraujoDB(StoreDB):
+    STORE_ID   = "araujo"
+    DB_ENV_KEY = "DATABASE_URL_ARAUJO"
+
+
+class CatarinenseDB(StoreDB):
+    STORE_ID   = "catarinense"
+    DB_ENV_KEY = "DATABASE_URL_CATARINENSE"
+
+
+class CallfarmaDB(StoreDB):
+    STORE_ID   = "callfarma"
+    DB_ENV_KEY = "DATABASE_URL_CALLFARMA"
+
+
 # Registry used by the CLI
 STORE_REGISTRY: Dict[str, type] = {
     "drogaleste":       DrogalesteDB,
@@ -1006,9 +1026,13 @@ STORE_REGISTRY: Dict[str, type] = {
     "indiana":          IndianaDB,
     "globo":            GloboDB,
     "permanente":       PermanenteDB,
-    "minasbrasil":      MinasBrasilDB,
+    # minasbrasil DROPPED 2026-08-21 (10h/59k, no bulk EAN source) — class kept dormant below
     "anossadrogaria":   AnossaDrogariaDB,
     "moderna":          ModernaDB,
+    "santalucia":       SantaLuciaDB,
+    "araujo":           AraujoDB,
+    "catarinense":      CatarinenseDB,
+    "callfarma":        CallfarmaDB,
 }
 
 
